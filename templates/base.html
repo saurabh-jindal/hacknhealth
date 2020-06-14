@@ -76,40 +76,11 @@
 				<div class="container">
 					<!-- nav -->
 					<ul class="nav-menu">
-						<li>
-							<a href="{% url 'blog_index' %}">Home</a>	
-						</li>
-						<li class="has-dropdown ">
-							<a href="#">Health</a>
-							<div class="dropdown">
-								<div class="dropdown-body">
-									<ul class="dropdown-list">
-										<li><a href="aayurveda.html">Aayurveda</a></li>
-										<!-- <li><a href="blog-post.html">Post page</a></li>
-										<li><a href="author.html">Author page</a></li>
-										<li><a href="about.html">About Us</a></li>
-										<li><a href="contact.html">Contacts</a></li>
-										<li><a href="blank.html">Regular</a></li> -->
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li class="has-dropdown">
-							<a href="#">Hacks</a>
-							<div class="dropdown">
-								<div class="dropdown-body">
-									<ul class="dropdown-list">
-										<li><a href="bug_bounty.html">Bug Bounty</a></li>
-										<!-- <li><a href="blog-post.html">Post page</a></li>
-										<li><a href="author.html">Author page</a></li>
-										<li><a href="about.html">About Us</a></li>
-										<li><a href="contact.html">Contacts</a></li>
-										<li><a href="blank.html">Regular</a></li> -->
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li><a href="travel.html">Travel</a></li>
+						<li><a href="{% url 'blog_index' %}">Home</a></li>
+						<li><a href="{% url 'blog_category' 'hacks' %}">HACKS</a></li>
+						<li><a href="{% url 'blog_category' 'health' %}">Health</a></li>
+						<li><a href="{% url 'blog_category' 'travel' %}">Travel</a></li>
+						
 						<li><a href="{% url 'contact' %}">Contact Us</a></li>
 						<!-- <li><a href="#">Health</a></li> -->
 						
