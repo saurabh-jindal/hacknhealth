@@ -58,7 +58,8 @@
 						<button class="aside-btn"><i class="fa fa-bars"></i></button>
 						<button class="search-btn"><i class="fa fa-search"></i></button>
 						<div id="nav-search">
-							<form>
+							<form action="search" method="GET">
+								{% csrf_token %}
 								<input class="input" name="search" placeholder="Enter your search...">
 							</form>
 							<button class="nav-close search-close">
@@ -93,22 +94,14 @@
 			<!-- Aside Nav -->
 			<div id="nav-aside">
 				<ul class="nav-aside-menu">
-					<li><a href="index.html">Home</a></li>
-					<li class="has-dropdown"><a>Health</a>
-						<ul class="dropdown">
-							<li><a href="#">Aayurveda</a></li>
-						</ul>
+					<li><a href="{% url 'blog_index' %}">Home</a></li>
+					<li><a href="category/health">Health</a>
 					</li>
-					<li class="has-dropdown"><a>Hacks</a>
-						<ul class="dropdown">
-							<li><a href="#">Bug Bounty</a></li>
-						</ul>
+					<li><a href="category/hacks">Hacks</a>
 					</li>
-					
-					<li><a href="travel.html">Travel</a></li>
+					<li><a href="category/travel">Travel</a></li>
 					<li><a href="{% url 'about' %}">About Us</a></li>
 					<li><a href="{% url 'contact' %}">Contacts</a></li>
-					<!-- <li><a href="#">Advertise</a></li> -->
 				</ul>
 				<button class="nav-close nav-aside-close"><span></span></button>
 			</div>

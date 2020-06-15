@@ -59,3 +59,15 @@ def newsletter(request):
 
         news.save()
     return redirect('/')
+
+
+def search(request):
+    p = request.GET.get('search')
+    posts = Post.objects.filter(title__icontains=p)
+    context = {
+        'posts':posts
+    }
+    return render(request, 'blog/search.html', context)
+      
+
+   
