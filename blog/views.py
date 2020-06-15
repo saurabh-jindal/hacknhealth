@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render,HttpResponse, redirect, get_object_or_404
 from django.contrib import messages
 
 # Create your views here.
@@ -19,28 +19,17 @@ def blog_category(request, category):
     ).order_by(
         '-created_on'
     )
-    first = posts[0]
-    posts = posts[1:]
+
     context = {
         'category': category,
         'posts':posts,
-        'first':first
     }   
     return render(request, 'blog/category.html', context)
 
 def blog_detail(request, slug):
-    post = Post.objects.get(slug=slug)
-    if request.method == 'POST':
-        author = request.POST['author']
-        body = request.POST['body']
-
-        comment_obj=  Comment(author = author, body= body, post= post)
-        # Some checking
-        comment_obj.save()
-    comments = Comment.objects.filter(post= post)
+    post = Post.objects.filter(slug= slug).first()
     context = {
         'post' : post, 
-        'comments' : comments
     }
     return render(request, 'blog/blog-post.html', context)
 

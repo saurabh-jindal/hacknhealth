@@ -9,11 +9,11 @@ class Category(models.Model):
 class Post(models.Model):
     title=models.CharField(max_length = 255)
     body = models.TextField()
-    slug = models.CharField(max_length= 100)
+    slug = models.CharField(max_length= 150)
     created_on = models.DateTimeField(auto_now_add= True)
     last_modified = models.DateTimeField(auto_now = True)
     image = models.ImageField(upload_to='blog/images', default='')
-    categories = models.ManyToManyField('Category', related_name = 'posts')
+    categories = models.ManyToManyField('Category')
     def __str__(self):
         return 'POST is ' + self.title
 

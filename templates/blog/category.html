@@ -24,27 +24,7 @@
 		<!-- row -->
 		<div class="row">
 			<div class="col-md-12">
-				<!-- post -->
-				<div class="post post-thumb">
-					<a class="post-img" href="{% url 'blog_detail' first.slug %}"><img src="{{first.image.url}}" alt=""></a>
-					<div class="post-body">
-						<div class="post-category">
-							<a href="{% url 'blog_category' category %}">{{category}}</a>
-						</div>
-						<h3 class="post-title title-lg"><a href="{% url 'blog_detail' first.slug %}">{{first.title}}</a></h3>
-						<ul class="post-meta">
-							<li><a href="author.html">SJ</a></li>
-							<li>{{first.last_modified.date}}</li>
-						</ul>
-					</div>
-				</div>
-				<!-- /post -->
 				
-
-				
-
-				
-
 				{% for post in posts %}
 				<!-- post -->
 				<div class="post post-row">
