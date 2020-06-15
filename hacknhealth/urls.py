@@ -19,6 +19,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 
+admin.site.site_name = "HackHHealth"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),

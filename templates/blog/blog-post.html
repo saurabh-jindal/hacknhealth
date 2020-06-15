@@ -11,7 +11,9 @@
 		<div class="row">
 			<div class="col-md-10">
 				<div class="post-category">
-					<a href="category.html">{{post.categories}}</a>
+					{% for cat in post.categories.all %}
+					<a href="/category/{{cat}}">{{cat}}</a>
+					{% endfor %}
 				</div>
 				<h1>{{post.title}}</h1>
 				<ul class="post-meta">
@@ -45,7 +47,7 @@
 
 				<!-- post content -->
 				<div class="section-row">
-					{{post.body}}
+					{{post.body | safe}}
 				</div>
 				<!-- /post content -->
 
